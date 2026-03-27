@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { getToolBySlug } from '@/lib/tools';
 import ToolPage from '@/components/ToolPage';
+import AllergenMatrixBuilder from '@/components/tools/AllergenMatrixBuilder';
 import { notFound } from 'next/navigation';
 
 const tool = getToolBySlug('allergen-matrix-builder')!;
@@ -24,5 +25,9 @@ export const metadata: Metadata = {
 
 export default function Page() {
   if (!tool) notFound();
-  return <ToolPage tool={tool} />;
+  return (
+    <ToolPage tool={tool}>
+      <AllergenMatrixBuilder />
+    </ToolPage>
+  );
 }

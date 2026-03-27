@@ -68,7 +68,7 @@ function ToolJsonLd({ tool }: { tool: Tool }) {
   );
 }
 
-export default function ToolPage({ tool }: { tool: Tool }) {
+export default function ToolPage({ tool, children }: { tool: Tool; children?: React.ReactNode }) {
   const related = getRelatedTools(tool.slug);
 
   return (
@@ -90,14 +90,16 @@ export default function ToolPage({ tool }: { tool: Tool }) {
           {tool.problemTag}
         </p>
 
-        <div className="tool-placeholder">
-          <p>
-            <strong>{tool.name}</strong> — interactive tool coming soon.
-          </p>
-          <p style={{ marginTop: '0.5rem' }}>
-            This tool will be fully browser-based with no signup required.
-          </p>
-        </div>
+        {children || (
+          <div className="tool-placeholder">
+            <p>
+              <strong>{tool.name}</strong> — interactive tool coming soon.
+            </p>
+            <p style={{ marginTop: '0.5rem' }}>
+              This tool will be fully browser-based with no signup required.
+            </p>
+          </div>
+        )}
 
         <div className="tool-content">
           <h2>How to Use the {tool.name}</h2>
