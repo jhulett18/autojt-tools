@@ -1,5 +1,5 @@
 const stats = [
-  { num: '6', label: 'Free tools' },
+  { num: '7', label: 'Free tools' },
   { num: '0', label: 'Signups required' },
   { num: '100%', label: 'Browser-based' },
   { num: '\u221E', label: 'Print / export' },

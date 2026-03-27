@@ -58,7 +58,7 @@ function JsonLd() {
   );
 }
 
-const categoryOrder: ToolCategory[] = ['deadline', 'cost', 'operations', 'food-safety'];
+const categoryOrder: ToolCategory[] = ['valuation', 'deadline', 'cost', 'operations', 'food-safety'];
 
 export default function HomePage() {
   return (
@@ -74,7 +74,7 @@ export default function HomePage() {
           The spreadsheet you&apos;ve been putting off — <em>built already.</em>
         </p>
         <p>
-          Six free browser-based tools solving real compliance, deadline, and operations problems. No
+          Seven free browser-based tools solving real compliance, deadline, and operations problems. No
           signup. No ads. Just the tool.
         </p>
         <StatRow />

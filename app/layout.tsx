@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     template: `%s | ${SITE_NAME}`,
   },
   description:
-    '6 free browser-based tools for South Florida businesses. IEP deadline calculators, food truck permits, deposition costs, allergen matrices — no signup, instant export.',
+    '7 free browser-based tools for South Florida businesses. IEP deadline calculators, food truck permits, deposition costs, allergen matrices — no signup, instant export.',
   keywords: [
     'free business tools',
     'South Florida',
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     title: `Free Business Tools for South Florida | ${SITE_NAME}`,
     description:
-      '6 free browser-based tools for food service, education, legal, and manufacturing businesses in South Florida. No account needed.',
+      '7 free browser-based tools for food service, education, legal, and manufacturing businesses in South Florida. No account needed.',
     url: SITE_URL,
     images: [
       {
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: `Free Business Tools for South Florida | ${SITE_NAME}`,
     description:
-      '6 free browser-based tools for food service, education, legal, and manufacturing. No signup. Instant export.',
+      '7 free browser-based tools for food service, education, legal, and manufacturing. No signup. Instant export.',
     images: ['/og-image.png'],
   },
   alternates: {

@@ -1,6 +1,6 @@
 export type ToolColor = 'teal' | 'amber' | 'blue' | 'purple';
 export type IndustryTag = 'food' | 'edu' | 'mfg' | 'legal';
-export type ToolCategory = 'deadline' | 'cost' | 'operations' | 'food-safety';
+export type ToolCategory = 'deadline' | 'cost' | 'operations' | 'food-safety' | 'valuation';
 
 export interface Tool {
   slug: string;
@@ -35,6 +35,7 @@ export const CATEGORIES: Record<ToolCategory, string> = {
   cost: 'Cost Estimation problems',
   operations: 'Operations & Supplier problems',
   'food-safety': 'Food Safety Documentation problems',
+  valuation: 'Case & Settlement Valuation problems',
 };
 
 export const tools: Tool[] = [
@@ -341,6 +342,71 @@ export const tools: Tool[] = [
       ],
       ctaPitch:
         'This builds a static matrix. The automated version syncs with your POS — when you change the menu, the allergen chart updates itself and notifies your staff.',
+    },
+  },
+  {
+    slug: 'pi-case-value-estimator',
+    name: 'PI Case Value Estimator',
+    industry: 'legal',
+    industryLabel: 'Legal / PI',
+    color: 'purple',
+    problemTag: 'Problem: Your client asks "how much is my case worth?" and you need a number before the retainer meeting',
+    description:
+      'Input injury type, medical costs, lost wages, pain multiplier, insurance limits, and comparative fault. Get an estimated settlement range based on Florida PI valuation methods — in 60 seconds.',
+    category: 'valuation',
+    seo: {
+      title: 'Free PI Case Value Estimator — Florida Personal Injury Settlement Calculator',
+      description:
+        'Estimate personal injury case value for Florida claims. Medical costs, lost wages, pain and suffering multiplier, comparative fault. Free calculator, instant results.',
+      keywords: [
+        'personal injury case value calculator',
+        'how much is my PI case worth Florida',
+        'Florida personal injury settlement calculator',
+        'PI case value estimator',
+        'personal injury settlement estimate',
+        'Florida car accident settlement calculator',
+        'pain and suffering multiplier Florida',
+      ],
+    },
+    content: {
+      howToUse: [
+        'Select the injury severity level — from soft tissue to catastrophic.',
+        'Enter total medical expenses (past and estimated future treatment).',
+        'Add lost wages and any reduced earning capacity.',
+        'Adjust the pain and suffering multiplier based on injury severity.',
+        'Enter the at-fault party\'s insurance policy limit.',
+        'Set your comparative fault percentage if applicable.',
+        'View the estimated settlement range instantly.',
+      ],
+      whoFor:
+        'Personal injury attorneys evaluating new cases, paralegals preparing case valuations, and individuals in South Florida who want a realistic estimate of their claim value before hiring a lawyer.',
+      contextHeading: 'How Florida PI Settlements Are Calculated',
+      context:
+        'Florida personal injury settlements are typically calculated using the "multiplier method": total economic damages (medical bills + lost wages) multiplied by a factor of 1.5x to 5x based on injury severity, then adjusted for comparative fault under Florida\'s modified comparative negligence statute (effective March 2023). Settlements are also capped by available insurance coverage. A soft tissue injury with $15,000 in medical bills might settle for $22,500–$45,000 before fault adjustments, while a severe injury with $200,000 in medical costs could justify $600,000–$1,000,000. This estimator applies these standard valuation methods so you can set realistic expectations before the first consultation.',
+      faq: [
+        {
+          question: 'Is this an actual case valuation?',
+          answer:
+            'No. This is an educational estimate based on standard Florida PI valuation methods. Every case is unique. Consult a licensed personal injury attorney for an actual case evaluation.',
+        },
+        {
+          question: 'How does comparative fault affect my case in Florida?',
+          answer:
+            'Under Florida\'s modified comparative negligence law (effective March 2023), your recovery is reduced by your percentage of fault. If you are more than 50% at fault, you recover nothing. This calculator applies that reduction automatically.',
+        },
+        {
+          question: 'What is the pain and suffering multiplier?',
+          answer:
+            'Insurance companies and attorneys use a multiplier (typically 1.5x to 5x) applied to your economic damages to estimate non-economic damages like pain, suffering, and loss of enjoyment of life. Higher multipliers apply to more severe, long-lasting injuries.',
+        },
+        {
+          question: 'Does insurance policy limit matter?',
+          answer:
+            'Yes. Even if your case is worth $500,000, if the at-fault party only has a $100,000 policy, that is typically the maximum you can recover unless there are additional sources of coverage (umbrella policies, underinsured motorist coverage, etc.).',
+        },
+      ],
+      ctaPitch:
+        'This gives you a ballpark. The production version connects to your case management system and automatically calculates valuations as medical bills and treatment records come in — so you always know where every case stands.',
     },
   },
 ];
