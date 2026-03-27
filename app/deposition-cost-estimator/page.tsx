@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { getToolBySlug } from '@/lib/tools';
 import ToolPage from '@/components/ToolPage';
+import DepositionCostEstimator from '@/components/tools/DepositionCostEstimator';
 import { notFound } from 'next/navigation';
 
 const tool = getToolBySlug('deposition-cost-estimator')!;
@@ -24,5 +25,9 @@ export const metadata: Metadata = {
 
 export default function Page() {
   if (!tool) notFound();
-  return <ToolPage tool={tool} />;
+  return (
+    <ToolPage tool={tool}>
+      <DepositionCostEstimator />
+    </ToolPage>
+  );
 }
