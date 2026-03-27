@@ -138,7 +138,7 @@ export default function ToolPage({ tool, children }: { tool: Tool; children?: Re
         </div>
       </div>
 
-      <CtaBand />
+      <CtaBand pitch={tool.content.ctaPitch} />
     </>
   );
 }

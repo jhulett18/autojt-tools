@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useRef, useId } from 'react';
+import { useLocalStorage } from '@/lib/useLocalStorage';
 
 const CITIES = [
   { value: 'fort_pierce', label: 'Fort Pierce', notes: 'Requires City of Fort Pierce Mobile Food Vendor Permit + St. Lucie County Health Dept. inspection. Annual renewal.' },
@@ -65,8 +66,8 @@ function urgencyLabel(level: UrgencyLevel): string {
 }
 
 export default function FoodTruckPermitTracker() {
-  const [city, setCity] = useState<CityValue>('fort_pierce');
-  const [permits, setPermits] = useState<Permit[]>([]);
+  const [city, setCity] = useLocalStorage<CityValue>('fpt-city', 'fort_pierce');
+  const [permits, setPermits] = useLocalStorage<Permit[]>('fpt-permits', []);
   const [showForm, setShowForm] = useState(false);
   const [editingId, setEditingId] = useState<string | null>(null);
   const [formType, setFormType] = useState(PERMIT_TYPES[0] as string);

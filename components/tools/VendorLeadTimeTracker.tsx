@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useRef, useId } from 'react';
+import { useLocalStorage } from '@/lib/useLocalStorage';
 
 interface Delivery {
   id: string;
@@ -35,7 +36,7 @@ function calcStats(vendor: Vendor) {
 }
 
 export default function VendorLeadTimeTracker() {
-  const [vendors, setVendors] = useState<Vendor[]>([]);
+  const [vendors, setVendors] = useLocalStorage<Vendor[]>('vlt-vendors', []);
   const [showVendorForm, setShowVendorForm] = useState(false);
   const [vName, setVName] = useState('');
   const [vLead, setVLead] = useState('14');

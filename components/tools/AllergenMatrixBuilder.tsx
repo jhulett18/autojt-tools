@@ -1,6 +1,7 @@
 'use client';
 
-import { useState, useRef, useId } from 'react';
+import { useState, useRef, useId, useCallback } from 'react';
+import { useLocalStorage } from '@/lib/useLocalStorage';
 
 const ALLERGENS = [
   { key: 'milk', label: 'Milk', emoji: '🥛' },
@@ -16,14 +17,32 @@ const ALLERGENS = [
 
 type AllergenKey = (typeof ALLERGENS)[number]['key'];
 
+interface StoredMenuItem {
+  id: string;
+  name: string;
+  allergens: AllergenKey[];
+}
+
 interface MenuItem {
   id: string;
   name: string;
   allergens: Set<AllergenKey>;
 }
 
+function toStored(items: MenuItem[]): StoredMenuItem[] {
+  return items.map((i) => ({ id: i.id, name: i.name, allergens: [...i.allergens] }));
+}
+
+function fromStored(items: StoredMenuItem[]): MenuItem[] {
+  return items.map((i) => ({ id: i.id, name: i.name, allergens: new Set(i.allergens) }));
+}
+
 export default function AllergenMatrixBuilder() {
-  const [items, setItems] = useState<MenuItem[]>([]);
+  const [storedItems, setStoredItems] = useLocalStorage<StoredMenuItem[]>('amx-items', []);
+  const items = fromStored(storedItems);
+  const setItems = useCallback((fn: (prev: MenuItem[]) => MenuItem[]) => {
+    setStoredItems((prev) => toStored(fn(fromStored(prev))));
+  }, [setStoredItems]);
   const [newItemName, setNewItemName] = useState('');
   const inputRef = useRef<HTMLInputElement>(null);
   const printRef = useRef<HTMLDivElement>(null);
@@ -238,7 +257,7 @@ th:first-child,td:first-child{text-align:left;font-weight:600}
             <button
               className="amx-btn-clear"
               onClick={() => {
-                if (window.confirm('Clear all menu items?')) setItems([]);
+                if (window.confirm('Clear all menu items?')) setItems(() => []);
               }}
               type="button"
             >

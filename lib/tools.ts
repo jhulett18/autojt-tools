@@ -22,6 +22,7 @@ export interface Tool {
     context: string;
     contextHeading: string;
     faq: { question: string; answer: string }[];
+    ctaPitch?: string;
   };
 }
 
@@ -43,9 +44,9 @@ export const tools: Tool[] = [
     industry: 'edu',
     industryLabel: 'Education',
     color: 'blue',
-    problemTag: 'Problem: Missing an IEP deadline is a federal violation',
+    problemTag: 'Problem: One missed deadline triggers state monitoring and due process complaints',
     description:
-      'Enter consent date and state. Get every IDEA-required deadline — evaluation, IEP meeting, annual review, re-eval — with urgency color-coding and state-specific rules.',
+      'Enter a consent date and your state. Instantly see every IDEA-required deadline — initial evaluation, IEP meeting, annual review, triennial re-eval — color-coded by urgency so nothing slips.',
     category: 'deadline',
     seo: {
       title: 'Free IEP Deadline Calculator — Florida Special Education Timelines',
@@ -88,6 +89,8 @@ export const tools: Tool[] = [
             'Yes. The calculator supports all 50 states with their specific timeline variations. Florida rules are pre-loaded as the default.',
         },
       ],
+      ctaPitch:
+        'This calculator shows deadlines. The automated version sends alerts to your entire team 30, 14, and 7 days before each one — connected to your school calendar.',
     },
   },
   {
@@ -96,9 +99,9 @@ export const tools: Tool[] = [
     industry: 'food',
     industryLabel: 'Food Service',
     color: 'amber',
-    problemTag: 'Problem: A lapsed permit means an immediate shutdown',
+    problemTag: 'Problem: A lapsed permit during a health inspection means you are shut down on the spot',
     description:
-      'Track every license and permit expiration in one view. City-specific notes for Fort Pierce, PSL, Fort Lauderdale, Miami. Color-coded urgency badges. Printable.',
+      'Select your city. See every permit you need to operate — state DBPR, county health, city BTR, fire safety. Track expiration dates with color-coded urgency so you never get caught with a lapsed license.',
     category: 'deadline',
     seo: {
       title: 'Free Food Truck Permit Tracker — South Florida Mobile Vendor Permits',
@@ -136,6 +139,8 @@ export const tools: Tool[] = [
             'No. This is a tracking and reminder tool. You still need to obtain and renew permits through the appropriate county and state agencies.',
         },
       ],
+      ctaPitch:
+        'This tracks permits you enter manually. The automated version pulls renewal dates from county systems and texts you 60 days before each one expires.',
     },
   },
   {
@@ -144,9 +149,9 @@ export const tools: Tool[] = [
     industry: 'legal',
     industryLabel: 'Legal / PI',
     color: 'purple',
-    problemTag: 'Problem: Evidence handling errors tank cases at deposition',
+    problemTag: 'Problem: One gap in the custody chain and opposing counsel moves to exclude your evidence',
     description:
-      'Generate a proper civil evidence chain-of-custody record for surveillance footage, accident photos, and medical records. Timestamped, signed, and print-ready.',
+      'Build a timestamped, print-ready chain-of-custody record in 2 minutes. Evidence details, every transfer event, handler signatures — formatted for Florida civil proceedings.',
     category: 'deadline',
     seo: {
       title: 'Free Chain-of-Custody Document Generator — Florida Legal',
@@ -184,6 +189,8 @@ export const tools: Tool[] = [
             'The generator supports surveillance footage, accident photos, medical records, physical evidence, digital files, and any other evidence type used in civil litigation.',
         },
       ],
+      ctaPitch:
+        'This generates one custody record. The automated version tracks every piece of evidence across your entire caseload with automatic timestamping and team notifications.',
     },
   },
   {
@@ -192,9 +199,9 @@ export const tools: Tool[] = [
     industry: 'legal',
     industryLabel: 'Legal / PI',
     color: 'purple',
-    problemTag: 'Problem: Discovery costs blindside PI firms on contingency',
+    problemTag: 'Problem: Discovery costs eat into contingency fees — and you do not see the total until it is too late',
     description:
-      'Vendor-neutral deposition budget tool built for PI attorneys. Toggle court reporter, transcript, videographer, room rental, and expedited options. Market-specific rate ranges for South Florida.',
+      'Toggle court reporter, transcript, videographer, room rental, and expedited delivery. Get an itemized cost range based on actual South Florida market rates for the 15th, 17th, and 19th Circuits.',
     category: 'cost',
     seo: {
       title: 'Free Deposition Cost Estimator — Florida PI Litigation',
@@ -232,6 +239,8 @@ export const tools: Tool[] = [
             'Rate ranges reflect pricing in Florida\'s 15th (Palm Beach), 17th (Broward), and 19th (St. Lucie, Martin, Indian River, Okeechobee) Judicial Circuits.',
         },
       ],
+      ctaPitch:
+        'This estimates one deposition. The automated version tracks discovery costs across your entire caseload and flags cases where spend is exceeding the projected recovery.',
     },
   },
   {
@@ -240,9 +249,9 @@ export const tools: Tool[] = [
     industry: 'mfg',
     industryLabel: 'Manufacturing',
     color: 'teal',
-    problemTag: "Problem: You don't know which suppliers are killing your schedule",
+    problemTag: 'Problem: You know which suppliers are late — you just cannot prove it in a vendor review',
     description:
-      'Log promised vs. actual delivery days per supplier. Auto-generates scorecards with on-time rate, average variance, and letter grade. Instantly see who\'s costing you production time.',
+      'Log promised vs. actual delivery days. Get instant vendor scorecards with on-time rate, average delay, and a letter grade you can put in front of your supplier at the next review meeting.',
     category: 'operations',
     seo: {
       title: 'Free Vendor Lead Time Tracker — Manufacturing & Supply Chain',
@@ -280,6 +289,8 @@ export const tools: Tool[] = [
             'There is no limit. Add as many suppliers as you need. All data stays in your browser — nothing is sent to a server.',
         },
       ],
+      ctaPitch:
+        'This builds a scorecard manually. The automated version connects to your PO system and updates vendor grades automatically — with alerts when a supplier drops below your threshold.',
     },
   },
   {
@@ -288,9 +299,9 @@ export const tools: Tool[] = [
     industry: 'food',
     industryLabel: 'Food Service',
     color: 'amber',
-    problemTag: 'Problem: One undisclosed allergen is a lawsuit waiting to happen',
+    problemTag: 'Problem: A customer asks about allergens — can your staff answer in 5 seconds?',
     description:
-      'Build an interactive allergen matrix for your full menu. All 9 FDA major allergens. Click to mark, auto-summary, and print a clean PDF to post or share with staff.',
+      'Build a printable allergen matrix for your entire menu. All 9 FDA-required allergens, every dish, one grid. Post it in the kitchen. Hand it to front-of-house. 10 minutes to build, protects you from the lawsuit that takes 10 months.',
     category: 'food-safety',
     seo: {
       title: 'Free Allergen Matrix Builder — Restaurant Food Safety',
@@ -328,6 +339,8 @@ export const tools: Tool[] = [
             'Florida does not mandate printed allergen matrices on menus, but restaurants must have allergen-aware staff and provide information on request. A posted matrix is the simplest way to comply and reduces liability risk.',
         },
       ],
+      ctaPitch:
+        'This builds a static matrix. The automated version syncs with your POS — when you change the menu, the allergen chart updates itself and notifies your staff.',
     },
   },
 ];

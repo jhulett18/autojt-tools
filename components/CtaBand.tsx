@@ -1,39 +1,24 @@
 'use client';
 
-import { useState } from 'react';
+import { CONTACT_EMAIL } from '@/lib/tools';
 
-export default function CtaBand() {
-  const [submitted, setSubmitted] = useState(false);
-
+export default function CtaBand({ pitch }: { pitch?: string }) {
   return (
     <section className="cta-band" aria-labelledby="cta-heading">
       <h2 id="cta-heading">
         Want this <span>automated</span>?
       </h2>
       <p>
-        These tools are demos. The real version plugs into your scheduling system, CRM, or case
-        management software — and sends the reminders for you.
+        {pitch ||
+          'These free tools show what we build. The production versions plug into your systems — and handle the work for you.'}
       </p>
-      <form
-        className="cta-email"
-        aria-label="Get automation updates"
-        onSubmit={(e) => {
-          e.preventDefault();
-          setSubmitted(true);
-        }}
+      <a
+        className="cta-email-btn"
+        href={`mailto:${CONTACT_EMAIL}?subject=Automation%20inquiry%20from%20tools.auto-jt.com&body=Hi%20JT%2C%0A%0AI%20found%20your%20free%20tools%20site%20and%20I%27m%20interested%20in%20automating%20some%20of%20my%20business%20processes.%0A%0A`}
       >
-        <label htmlFor="email-capture">Your email</label>
-        <input
-          type="email"
-          id="email-capture"
-          name="email"
-          placeholder="your@email.com"
-          required
-          autoComplete="email"
-        />
-        <button type="submit">{submitted ? 'Sent \u2713' : 'Get new tools'}</button>
-      </form>
-      <div className="cta-fine">New tools monthly &middot; No spam &middot; Unsubscribe any time</div>
+        Email JT &rarr;
+      </a>
+      <div className="cta-fine">Free consultation &middot; South Florida businesses &middot; hello@auto-jt.com</div>
     </section>
   );
 }
